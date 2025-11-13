@@ -4,11 +4,11 @@ export interface Skill {
 }
 
 export interface Project {
-  id: number;
-  name: string;
-  description: string;
-  technologies: string[];
-  status: 'Concluído' | 'Em Desenvolvimento';
+  Id: number;
+  Nome: string;
+  Descriçâo: string;
+  Resultados: string;
+  Status: 'Concluído' | 'Em Desenvolvimento';
 }
 
 export interface Experience {
