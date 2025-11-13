@@ -26,6 +26,13 @@ export interface Education {
   period: string;
 }
 
+export interface Cursos {
+  id: number;
+  institution: string;
+  degree: string;
+  Status: 'Concluído' | 'Em Desenvolvimento';
+}
+
 export interface PortfolioData {
   name: string;
   title: string;

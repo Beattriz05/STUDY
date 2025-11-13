@@ -7,15 +7,24 @@ export const portfolioData: PortfolioData = {
   phone: '+55 (81) 98222-8365',
   location: 'Recife-PE',
   
-  about: '',
+  about: 'Estudante de Análise e Desenvolvimento de Sistemas com sólida capacidade de resolução de problemas e adaptação a contextos dinámicos. Excelente comunicadora e colaboradora em equipe, com experiència prática no desenvolvimento de 3 projetos em parceria com o Porto Digital. Comprometida com aprendizado continuo e alta absorção de novas tecnologias para entregas. de impacto.',
+
+  education: [
+    {
+      id: 1,
+      institution: 'Faculdade Senac Pernambuco',
+      degree: 'Análise e Desenvolvimento De Sistemas',
+      period: '',
+    },
+  ],
   
   skills: [
-    { name: '', level: 0 },
-    { name: '', level: 0 },
-    { name: '', level: 0 },
-    { name: '', level: 0 },
-    { name: '', level: 0 },
-    { name: '', level: 0 },
+    { name: 'Java', level: 20 },
+    { name: 'Python', level: 20 },
+    { name: 'JavaScript', level: 60 },
+    { name: 'TypeScript', level: 50 },
+    { name: 'React', level: 30 },
+    { name: 'React Native', level: 15 },
   ],
   
   projects: [
@@ -58,13 +67,14 @@ export const portfolioData: PortfolioData = {
       description: 'Desenvolvimento de aplicativos mobile e manutenção de sistemas.',
     },
   ],
+
+ // Cursos: [              --ajustar
+  //  {
+  //    id: 1,
+  //    institution: 'Faculdade Senac Pernambuco',
+  //    degree: 'Análise e Desenvolvimento De Sistemas',
+  //    Status: 'Concluído' as const,
+  //  }
+ // ],
   
-  education: [
-    {
-      id: 1,
-      institution: 'Faculdade Senac Pernambuco',
-      degree: 'Análise e Desenvolvimento De Sistemas',
-      period: '2024 - 2025',
-    },
-  ],
 };
