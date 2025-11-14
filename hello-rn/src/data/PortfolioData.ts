@@ -33,6 +33,7 @@ export const portfolioData: PortfolioData = {
       Nome: 'NOME',
       Descriçâo: '',
       Resultados: '',
+      technologies: false,
       Status: 'Concluído' as const,
     },
     {
@@ -40,6 +41,7 @@ export const portfolioData: PortfolioData = {
       Nome: 'FLAGR',
       Descriçâo: 'Projeto em parceria com o Porto Digital para transformar a plataforma legada desta empresa de Due Diligence em uma solução moderna, centrada no usuário e conformidade com LGPD',
       Resultados: 'Solução premiada no Demoday com adoção imediata pelos stakeholders.',
+      technologies: false,
       Status: 'Concluído' as const,
     },
     {
@@ -47,6 +49,7 @@ export const portfolioData: PortfolioData = {
       Nome: 'LÁ DO CAMPO',
       Descriçâo: 'Plataforma de e-commerce e logistica que valoriza cultura artesanal',
       Resultados: 'Solução testada e aprovada por 50+ alunos do Senac durante apresentação institucional.',
+      technologies: false,
       Status: 'Concluído' as const,
     },
     {
@@ -54,6 +57,7 @@ export const portfolioData: PortfolioData = {
       Nome: 'PSYCONET',
       Descriçâo: 'Plataforma que desafia iniquidades em saúde mental ao conectar pacientes a terapia online acessivel e impulsionando carreiras de psicólogos recém-formados em um mercado saturado',
       Resultados: 'Solução testada e aprovada por 30 alunos do Senac durante apresentação institucional.',
+      technologies: false,
       Status: 'Concluído' as const,
     },
   ],

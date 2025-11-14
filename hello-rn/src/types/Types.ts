@@ -8,6 +8,7 @@ export interface Project {
   Nome: string;
   Descriçâo: string;
   Resultados: string;
+  technologies: boolean;
   Status: 'Concluído' | 'Em Desenvolvimento';
 }
 

@@ -30,6 +30,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     ]).start();
   }, [index, scaleAnim, fadeAnim]);
 
+  // Verificação segura para o projeto
+  if (!project) {
+    return (
+      <View style={styles.projectCard}>
+        <Text>Projeto não disponível</Text>
+      </View>
+    );
+  }
+
   return (
     <Animated.View
       style={[
@@ -47,23 +56,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         style={styles.cardGradient}
       >
         <View style={styles.projectHeader}>
-          <Text style={styles.projectName}>{project.name}</Text>
+          <Text style={styles.projectName}>{project.Nome || 'Nome não disponível'}</Text>
           <View style={[
             styles.statusBadge,
-            project.status === 'Concluído' ? styles.statusComplete : styles.statusInProgress
+            project.Status === 'Concluído' ? styles.statusComplete : styles.statusInProgress
           ]}>
-            <Text style={styles.statusText}>{project.status}</Text>
+            <Text style={styles.statusText}>{project.Status || 'Status não definido'}</Text>
           </View>
         </View>
 
-        <Text style={styles.projectDescription}>{project.description}</Text>
+        <Text style={styles.projectDescription}>{project.Descriçâo || 'Descrição não disponível'}</Text>
 
+        {/* CORREÇÃO AQUI: Verificação segura para technologies */}
         <View style={styles.techContainer}>
-          {project.technologies.map((tech, idx) => (
-            <View key={idx} style={styles.techBadge}>
-              <Text style={styles.techText}>{tech}</Text>
-            </View>
-          ))}
+          {project.technologies && Array.isArray(project.technologies) 
+            ? project.technologies.map((tech, idx) => (
+                <View key={`tech-${project.Id}-${idx}`} style={styles.techBadge}>
+                  <Text style={styles.techText}>{tech}</Text>
+                </View>
+              ))
+            : <Text style={styles.techText}>Tecnologias não listadas</Text>
+          }
         </View>
       </LinearGradient>
     </Animated.View>
@@ -86,11 +99,26 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     }).start();
   }, [fadeAnim]);
 
+  // CORREÇÃO: Verificação segura para projects
+  if (!projects || !Array.isArray(projects)) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.sectionTitle}>Projetos</Text>
+        <Text>Nenhum projeto disponível</Text>
+      </View>
+    );
+  }
+
   return (
     <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
       <Text style={styles.sectionTitle}>Projetos</Text>
       {projects.map((project, index) => (
-        <ProjectCard key={project.id} project={project} index={index} />
+        // CORREÇÃO: Key mais segura
+        <ProjectCard 
+          key={project?.Id ? `project-${project.Id}` : `project-${index}`} 
+          project={project} 
+          index={index} 
+        />
       ))}
     </Animated.View>
   );
